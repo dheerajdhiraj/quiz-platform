@@ -1,35 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Platform - Cloud Computing Project</title>
+    <title>Quiz Platform</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1> Cloud-Based Quiz Platform</h1>
-        <p>Welcome to our cloud-powered quiz application!</p>
-        
-        <div class="card-container">
-            <div class="card">
-                <h2> Admin</h2>
-                <p>Create and manage quizzes</p>
-                <a href="admin.html" class="btn">Admin Login</a>
-            </div>
-            
-            <div class="card">
-                <h2> Student</h2>
-                <p>Take quizzes and compete</p>
-                <a href="student.html" class="btn">Student Access</a>
-            </div>
-            
-            <div class="card">
-                <h2> Leaderboard</h2>
-                <p>See top performers</p>
-                <a href="leaderboard.html" class="btn">View Rankings</a>
-            </div>
+
+<div class="background-animation"></div>
+
+<nav class="navbar">
+    <div class="logo">Quiz Platform</div>
+    <button onclick="toggleTheme()" class="theme-btn">Toggle Theme</button>
+</nav>
+
+<div class="container">
+    <h1>Cloud-Based Quiz Platform</h1>
+
+    <div class="card-container">
+        <div class="card">
+            <h2>Admin</h2>
+            <a href="admin.html" class="btn">Admin Login</a>
+        </div>
+
+        <div class="card">
+            <h2>Student</h2>
+            <a href="student.html" class="btn">Student Access</a>
+        </div>
+
+        <div class="card">
+            <h2>Leaderboard</h2>
+            <a href="leaderboard.html" class="btn">View Rankings</a>
         </div>
     </div>
+</div>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("light-mode");
+}
+</script>
+
 </body>
 </html>

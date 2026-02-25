@@ -1,48 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Take Quiz - Quiz Platform</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Ultra Premium</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Student Quiz Portal</h1>
-        
-        <div id="student-info" class="section">
-            <h2>Enter Your Details</h2>
-            <input type="text" id="student-name" placeholder="Your Name" class="input-field">
-            <button onclick="startAnonymousSession()" class="btn">Continue as Guest</button>
-        </div>
-        
-        <div id="available-quizzes" class="section hidden">
-            <h2>Available Quizzes</h2>
-            <div id="quiz-list"></div>
-        </div>
-        
-        <div id="quiz-area" class="section hidden">
-            <div class="quiz-header">
-                <h2 id="current-quiz-title"></h2>
-                <div class="timer">Time Left: <span id="timer">00:00</span></div>
-            </div>
-            
-            <div id="questions-area"></div>
-            
-            <button onclick="submitQuiz()" class="btn">Submit Quiz</button>
-        </div>
-        
-        <div id="results-area" class="section hidden">
-            <h2>Your Results</h2>
-            <div id="score-display"></div>
-            <a href="leaderboard.html" class="btn">View Leaderboard</a>
-        </div>
+
+<canvas id="particles"></canvas>
+
+<nav class="navbar">
+    <div class="logo">Quiz Ultra</div>
+    <div class="nav-right">
+        <button onclick="toggleTheme()" class="toggle-btn">🌙</button>
     </div>
-    
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-    <script src="js/firebase-config.js"></script>
-    <script src="js/student.js"></script>
+</nav>
+
+<div class="glass container">
+
+<h1>Student Portal</h1>
+
+<div id="student-info" class="section glass">
+    <h2>Enter Your Name</h2>
+    <input type="text" id="student-name" placeholder="Your Name" class="input-field">
+    <button onclick="startAnonymousSession()" class="btn">Start</button>
+</div>
+
+<div id="available-quizzes" class="section glass hidden">
+    <h2>Available Quizzes</h2>
+    <div id="quiz-list"></div>
+</div>
+
+<div id="quiz-area" class="section glass hidden">
+    <div class="quiz-top">
+        <h2 id="current-quiz-title"></h2>
+        <div class="timer" id="timer-box">⏳ <span id="timer">00:00</span></div>
+    </div>
+
+    <div class="progress-wrapper">
+        <div class="progress-bar">
+            <div id="progress"></div>
+        </div>
+        <span id="progress-text"></span>
+    </div>
+
+    <div id="question-navigation" class="navigator"></div>
+    <div id="questions-area"></div>
+
+    <div class="action-row">
+        <button onclick="reviewQuiz()" class="btn-secondary">Review</button>
+        <button onclick="submitQuiz()" class="btn">Submit</button>
+    </div>
+</div>
+
+<div id="review-area" class="section glass hidden">
+    <h2>Review Answers</h2>
+    <div id="review-list"></div>
+    <button onclick="submitQuiz()" class="btn">Confirm Submit</button>
+</div>
+
+<div id="results-area" class="section glass hidden">
+    <h2>Your Results</h2>
+    <div id="score-display" class="result-card"></div>
+    <a href="leaderboard.html" class="btn">Leaderboard</a>
+</div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/student.js"></script>
+
 </body>
 </html>
